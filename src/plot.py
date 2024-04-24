@@ -15,8 +15,10 @@ def main():
         values = json.load(f)
 
     plt.plot(mileages, [values["theta1"] * x + values["theta0"] for x in mileages])
+
     
     plt.savefig('tmp/plot.png')
+    # plt.show()
 
 if __name__ == "__main__":
     main()
