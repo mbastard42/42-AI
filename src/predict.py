@@ -2,12 +2,18 @@ import json
 
 def main():
     
-    with open("src/theta.json", "r") as f:
-        values = json.load(f)
+    theta0 = 0
+    theta1 = 0
+
+    try:
+        with open("src/theta.json", "r") as f:
+            values = json.load(f)
+        theta0 = values["theta0"]
+        theta1 = values["theta1"]
+    except:
+        theta0 = theta1
 
     x = float(input())
-    theta0 = values["theta0"]
-    theta1 = values["theta1"]
 
     print(theta0 + (theta1 * x))
 
